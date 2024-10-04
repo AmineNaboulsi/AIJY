@@ -185,6 +185,7 @@ thead{
 }
 .MemberName h3{
   font-size: 1rem;
+  font-family: 'Courier New', Courier, monospace;
 }
 .MemberTask{
   /* background-color: blueviolet; */
