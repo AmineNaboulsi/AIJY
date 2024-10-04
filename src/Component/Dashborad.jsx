@@ -17,17 +17,13 @@ function Dashborad() {
     setCurrentDate(new_Date);
   }
   return (
-    <>
     <dashboard>
-      
       <TasksManagerList message={msg} />
       <CardsMoney message={msg}/>
       <Calender DateChanged={DateChanged}/>
-      <PieChart ApplyChanged={ApplyChanged}/>
       <LineGraph  message={msg}/>
-      
-   </dashboard>
-   </>
+      <PieChart ApplyChanged={ApplyChanged}/>
+  </dashboard> 
     
   )
 }
