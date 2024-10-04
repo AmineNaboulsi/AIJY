@@ -7,14 +7,15 @@
 *{
   padding: 0%;
   margin: 0%;
+  
 }
 .BodyRoot{
   position: relative;
   font-family: sans-serif;
   width: 100%;
-  background-color: aqua;
-  display: flex;
+    display: flex;
   justify-content: center;
+  height: 100vh;
 }
 nav{
   margin: 20px 0px 50px;
@@ -88,18 +89,21 @@ nav{
 .Logo , .LightMode{
   margin: 0px 50px;
 }
-dashboard{
+dashboard{  
   display: grid;
   gap: 20px;
-  width: 100%;
-  grid-template-areas: 'TasksManagement TasksManagement TodayYesterdaySpend Calendar';
+  width: 100%;  
+  grid-template-areas: 
+  "TasksManagement TodayYesterdaySpend Calendar"
+  " LineChart PieChart PieChart ";
   max-width: 2000px;
-  margin: 0px 50px;
+  margin-inline: 50px;
 }
 
 .TasksManagement{
   background-color: white;
   grid-area: TasksManagement;
+  
 }
 .TodayYesterdaySpend{
   height: 300px;
@@ -111,7 +115,16 @@ dashboard{
   background-color: white;
   grid-area: Calendar;
 }
-
+.PieChart{
+  background-color: white;
+  grid-area: PieChart;
+  height: 200px;
+}
+.LineChart{
+  background-color: white;
+  grid-area: LineChart;
+  height: 200px;
+}
 .Table table{
   background-color: red;
   width: 100%;
@@ -121,7 +134,11 @@ dashboard{
 @media only screen and (max-width: 1128px) {
   dashboard{
     display: grid;
-    grid-template-areas: 'TasksManagement TasksManagement ' 'TodayYesterdaySpend Calendar';
+    grid-template-areas: 
+    'TasksManagement TasksManagement ' 
+    'TodayYesterdaySpend Calendar'
+    ' LineChart PieChart'
+    ;
   }
   
 }

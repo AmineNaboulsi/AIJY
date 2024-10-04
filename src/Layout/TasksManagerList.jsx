@@ -1,6 +1,7 @@
-import React from 'react'
+import React , {useState} from 'react'
 
-function TasksManagerList() {
+
+function TasksManagerList({ ApplyChanged }) {
   return (
     <div className="TasksManagement">
         <div className="TitleTaskManager">
