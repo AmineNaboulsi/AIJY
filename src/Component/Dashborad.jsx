@@ -9,18 +9,26 @@ import LineGraph from '../Layout/LineGraph'
 
 function Dashborad() {
   const [msg , setmsg] = useState("test");
+  const [CurrentDate , setCurrentDate] = useState(new Date());
   const ApplyChanged = (value) =>{
     setmsg(value);
   }
+  const DateChanged = (new_Date) =>{
+    setCurrentDate(new_Date);
+  }
   return (
+    <>
     <dashboard>
-       <TasksManagerList message={msg} />
-       <CardsMoney message={msg}/>
-       <Calender message={msg}/>
-       <PieChart ApplyChanged={ApplyChanged}/>
-       <LineGraph  message={msg}/>
-       
-    </dashboard>
+      
+      <TasksManagerList message={msg} />
+      <CardsMoney message={msg}/>
+      <Calender DateChanged={DateChanged}/>
+      <PieChart ApplyChanged={ApplyChanged}/>
+      <LineGraph  message={msg}/>
+      
+   </dashboard>
+   </>
+    
   )
 }
 
