@@ -4,25 +4,103 @@ import React , {useState} from 'react'
 function TasksManagerList({ ApplyChanged }) {
   return (
     <div className="TasksManagement">
-        <div className="TitleTaskManager">
-            <h5>Tasks Management</h5>
+        <div className="TitleTaskManager ">
+            <h3 className='poppins'>Tasks Management</h3>
         </div>
         <div className="Table">
             <table>
-                <thead>
+                <thead className='poppins'> 
+                    <th></th>
                     <th>Members</th>
                     <th>Tasks</th>
                     <th>Rating</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <img width={120} src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg" alt="" />
-                            <h3>Jawad Boulmal</h3>
+                    <tr className='special-row'>
+                        <td className='MemberImage'>
+                        <div>
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" />
+                        </div>
+
+                                
                         </td>
-                        <td><div>Outside</div></td>
-                        <td>10%</td>
+                        <td className='MemberName'>
+                                <h3 >Jawad Boulmal</h3>
+                        </td>
+                        <td className='MemberTask'>
+                            <div>
+                                Outside
+                            </div>
+                        </td>
+                        <td className='MemberRate'>
+                            10%
+                        </td>
                     </tr>
+
+                    <tr>
+                        <td className='MemberImage'>
+                        <div>
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" />
+                        </div>
+
+                                
+                        </td>
+                        <td className='MemberName'>
+                                <h3 >Jawad Boulmal</h3>
+                        </td>
+                        <td className='MemberTask'>
+                            <div>
+                                Outside
+                            </div>
+                        </td>
+                        <td className='MemberRate'>
+                            10%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td className='MemberImage'>
+                        <div>
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" />
+                        </div>
+
+                                
+                        </td>
+                        <td className='MemberName'>
+                                <h3 >Jawad Boulmal</h3>
+                        </td>
+                        <td className='MemberTask'>
+                            <div>
+                                Outside
+                            </div>
+                        </td>
+                        <td className='MemberRate'>
+                            10%
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td className='MemberImage'>
+                        <div>
+                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" />
+                        </div>
+
+                                
+                        </td>
+                        <td className='MemberName'>
+                                <h3 >Jawad Boulmal</h3>
+                        </td>
+                        <td className='MemberTask'>
+                            <div>
+                                Outside
+                            </div>
+                        </td>
+                        <td className='MemberRate'>
+                            10%
+                        </td>
+                    </tr>
+
+                    
                 </tbody>
             </table>
         </div>
