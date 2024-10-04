@@ -1,42 +1,127 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+:root{
+  --PrimaryColor : #ffffff;
+  --SecondColor : #9d9d9d;
+  --TitleColor : #1c1b1b;
+  --SubtitleColor : #474646;
+}
+*{
+  padding: 0%;
+  margin: 0%;
+}
+.BodyRoot{
+  position: relative;
+  font-family: sans-serif;
+  width: 100%;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+}
+nav{
+  margin: 20px 0px 50px;
+  display: grid;
+  place-items: center;
+}
+.BarNav{
+  max-width: 1518px;  position: relative;
+  font-family: sans-serif;
+  background-color: var(--PrimaryColor);
+  width: 80%;
+  height: 50px;
+  display: flex;
+  place-items: center;
+  justify-content: space-between;
+  grid-template-columns: 25% 1fr 25% ;
+  padding-block: 10px;
+  padding-inline: 40px;
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 50px;
+}
+.Menu{
+  display: flex;
+  gap: 30px;
+}
+.Option{
+  color: #3a3a3a;
+  transform: scale(1.1rem);
+  font-family: sans-serif;
+  cursor: pointer;
+  position: relative;
+}
+.Option::after {
+  content: ' ';
+  width: 0px;
+  height: 3px; display: block;
+  position: relative;
+  background-color: rgb(0, 0, 0);
+  transform: translateY(26px);
+  transition: .2s;
   text-align: center;
+  position: absolute;
+  left: 50%;
+
+}
+.Option:hover.Option::after {
+  width: 100%;
+  left: 0%;
+  color: #000000;
+ 
+}
+.Option:hover{
+  color: #000000;
+}
+.active{
+  color: #000000;
+  cursor: pointer;
+  font-weight: bold;
+} 
+.active::after{
+  content: ' ';
+  width: 100%;
+  height: 3px; 
+  display: block;
+  position: relative;
+  background-color: rgb(0, 0, 0);
+  transform: translateY(26px);
+  transition: .2s;
+
+}
+.Logo , .LightMode{
+  margin: 0px 50px;
+}
+dashboard{
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  grid-template-areas: 'TasksManagement TasksManagement TodayYesterdaySpend Calendar';
+  max-width: 2000px;
+  margin: 0px 50px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.TasksManagement{
+  background-color: white;
+  grid-area: TasksManagement;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.TodayYesterdaySpend{
+  height: 300px;
+  background-color: white;
+  grid-area: TodayYesterdaySpend;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.Calendar{
+  height: 300px;
+  background-color: white;
+  grid-area: Calendar;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.Table table{
+  background-color: red;
+  width: 100%;
+}
+
+
+@media only screen and (max-width: 1128px) {
+  dashboard{
+    display: grid;
+    grid-template-areas: 'TasksManagement TasksManagement ' 'TodayYesterdaySpend Calendar';
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  
 }
