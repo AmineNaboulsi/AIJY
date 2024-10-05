@@ -1,0 +1,125 @@
+/* 
+Member Task Style Made By Jawad Boulmal
+*/
+
+.MemberRate{
+    color: red;
+    font-size: smaller;
+  }
+
+/* Style Of The Color Rate */
+.rateLow{
+color: red;
+}
+
+.rateMeduim{
+color: rgb(255, 242, 0);
+
+}
+.rateHigh{
+color: rgb(0, 255, 0);
+
+}
+
+/* Task List Management Style */
+.TasksManagement{
+    background-color: white;
+    padding: 0px 20px;
+    height: fit-content;
+    padding-bottom: 10px;
+    width: 430px;
+  }
+  
+.Table table{
+    /* background-color: rgb(141, 62, 62); */
+    width: 100%;
+    margin-top: 15px;
+}
+table, th, td {
+border: none;
+}
+th{
+padding-bottom: 10px;
+border-bottom: 1px solid rgba(92, 92, 92, 0.589);
+font-size: smaller;
+}
+  
+  
+.special-row {
+    border-bottom: 2px solid black;
+}
+  
+thead th{
+    text-align: left;
+    font-weight: 500;
+}
+td{
+font-family: "Poppins", sans-serif;
+font-style: normal;
+border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+}
+.Table Table tbody tr:nth-child(4){
+border: none;
+}
+.noBorder{
+border-bottom: none}
+.MemberImage {
+width: 37px;
+height: 100%;
+}
+.MemberImage img{ 
+width:32px;
+height:32px;
+border-radius: 5px;
+}
+  
+.MemberImage div{
+    padding: 8px 5px 8px 0px;
+    width: 50px;height: 100%;background-color: rgba(255, 0, 0, 0);display: flex;flex-flow: column;justify-content: center;place-items: center;
+}
+.TitleTaskManager{
+padding: 20px 0px;
+background-color: rgba(255, 0, 0, 0);
+}
+.TitleTaskManager h3{
+font-size: 18px;
+}
+.MemberName h3{
+font-size: 1rem;
+font-size: smaller;
+}
+
+
+  
+.MemberTaskOutside div{
+    background-color: rgba(255, 0, 0, 0.411);
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: .7rem;
+    color: red;
+}
+.MemberTaskWashing div{
+background-color: rgba(87, 255, 87, 0.411);
+width: fit-content;
+padding: 5px 10px;
+border-radius: 50px;
+font-size: .7rem;
+color: rgb(104, 255, 23);
+}
+.MemberTaskCleaning div{
+background-color: rgba(146, 146, 146, 0.411);
+width: fit-content;
+padding: 5px 10px;
+border-radius: 50px;
+font-size: .7rem;
+color: rgb(37, 37, 37);
+}
+.MemberTaskOther div{
+background-color: rgba(239, 246, 52, 0.411);
+width: fit-content;
+padding: 5px 10px;
+border-radius: 50px;
+font-size: .7rem;
+color: rgb(255, 227, 43);
+}

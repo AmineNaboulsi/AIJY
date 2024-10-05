@@ -3,6 +3,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateCalendar  } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'; // Import the adapter for dayjs
 import TextField from '@mui/material/TextField';
+import "./Style/Calender.css"
 
 function Calender({DateChanged}) {
   const [selectedDate, setSelectedDate] = useState(null);

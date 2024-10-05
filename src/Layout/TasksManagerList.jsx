@@ -1,5 +1,5 @@
 import React , {useEffect, useState} from 'react'
-
+import "./Style/TasksManagerList.css"
 
 function TasksManagerList({ ApplyChanged }) {
     const [TaskList, setTaskList] = useState([]);
@@ -19,9 +19,6 @@ function TasksManagerList({ ApplyChanged }) {
     
   return (
     <div className="TasksManagement">
-        {/* <div className="TitleTaskManager ">
-            <h3 className='poppins'>Tasks Management</h3>
-        </div> */}
         <div className="Table">
             <table>
                 <thead className='poppins'> 
