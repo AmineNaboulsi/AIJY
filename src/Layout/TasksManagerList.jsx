@@ -7,7 +7,7 @@ function TasksManagerList({ ApplyChanged }) {
 
 
     useEffect(() => {
-        fetch("https://cors-anywhere.herokuapp.com/https://www.jsonkeeper.com/b/JAWD")
+        fetch("https://www.jsonkeeper.com/b/JAWD")
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
