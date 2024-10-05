@@ -24,12 +24,12 @@ const xLabels = [
         {
           scaleType: 'point',
           data: xLabels,
-          sx: { fontSize: 14 }, // Change font size for X-axis
+          sx: { fontSize: 14 },
         },
       ]}
       yAxis={[
         {
-          sx: { fontSize: 14 }, // Change font size for Y-axis
+          sx: { fontSize: 14 },
         },
       ]}
       sx={{
