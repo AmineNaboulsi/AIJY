@@ -2,12 +2,11 @@ import React , {useEffect, useState} from 'react'
 
 
 function TasksManagerList({ ApplyChanged }) {
-
     const [TaskList, setTaskList] = useState([]);
 
-
+    const url = import.meta.env.VITE_url;
     useEffect(() => {
-        fetch("https://aijyss.onrender.com/taskslist")
+        fetch(url)
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
