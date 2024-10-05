@@ -7,7 +7,7 @@ function TasksManagerList({ ApplyChanged }) {
 
 
     useEffect(() => {
-        fetch("https://www.jsonkeeper.com/b/JAWD")
+        fetch("https://aijyss.onrender.com/taskslist")
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
