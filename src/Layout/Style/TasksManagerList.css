@@ -1,11 +1,16 @@
 /* 
 Member Task Style Made By Jawad Boulmal
 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+table { 
+    border-collapse: collapse; 
+}
 
 .MemberRate{
     color: red;
     font-size: smaller;
-  }
+}
 
 /* Style Of The Color Rate */
 .rateLow{
@@ -13,7 +18,7 @@ color: red;
 }
 
 .rateMeduim{
-color: rgb(255, 242, 0);
+color: rgb(207, 197, 0);
 
 }
 .rateHigh{
@@ -39,9 +44,13 @@ table, th, td {
 border: none;
 }
 th{
-padding-bottom: 10px;
-border-bottom: 1px solid rgba(92, 92, 92, 0.589);
-font-size: smaller;
+padding-bottom: 8px;
+}
+tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.26); 
+}
+thead{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.26);
 }
   
   
@@ -50,13 +59,12 @@ font-size: smaller;
 }
   
 thead th{
-    text-align: left;
-    font-weight: 500;
+    text-align: left;font-size: smaller;
 }
 td{
-font-family: "Poppins", sans-serif;
-font-style: normal;
-border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+    font-style: normal;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+    font-size: small;
 }
 .Table Table tbody tr:nth-child(4){
 border: none;
@@ -82,44 +90,41 @@ padding: 20px 0px;
 background-color: rgba(255, 0, 0, 0);
 }
 .TitleTaskManager h3{
-font-size: 18px;
 }
 .MemberName h3{
-font-size: 1rem;
-font-size: smaller;
 }
 
 
   
 .MemberTaskOutside div{
-    background-color: rgba(255, 0, 0, 0.411);
+    background-color: rgba(229, 54, 54, 1);
     width: fit-content;
     padding: 5px 10px;
     border-radius: 50px;
     font-size: .7rem;
-    color: red;
+    color: rgb(255, 255, 255);
 }
 .MemberTaskWashing div{
-background-color: rgba(87, 255, 87, 0.411);
+background-color: rgba(87, 164, 87, 1);
 width: fit-content;
 padding: 5px 10px;
 border-radius: 50px;
 font-size: .7rem;
-color: rgb(104, 255, 23);
+color: rgb(255, 255, 255);
 }
 .MemberTaskCleaning div{
-background-color: rgba(146, 146, 146, 0.411);
+background-color: rgba(116, 116, 116, 1);
 width: fit-content;
 padding: 5px 10px;
 border-radius: 50px;
 font-size: .7rem;
-color: rgb(37, 37, 37);
+color: rgb(255, 255, 255);
 }
 .MemberTaskOther div{
-background-color: rgba(239, 246, 52, 0.411);
+background-color: rgba(222, 144, 45, 1);
 width: fit-content;
 padding: 5px 10px;
 border-radius: 50px;
 font-size: .7rem;
-color: rgb(255, 227, 43);
+color: rgb(255, 255, 255);
 }

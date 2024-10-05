@@ -1,9 +1,9 @@
 import React , {useEffect, useState} from 'react'
 import "./Style/TasksManagerList.css"
 
+
 function TasksManagerList({ ApplyChanged }) {
     const [TaskList, setTaskList] = useState([]);
-
     const url = import.meta.env.VITE_url;
     useEffect(() => {
         fetch(url)
@@ -37,31 +37,22 @@ function TasksManagerList({ ApplyChanged }) {
                                 </div>
                                 </td>
                                 <td className='noBorder MemberName'>
-                                        <h3>{item.name}</h3>
+                                    <h3>{item.name}</h3>
                                 </td>
                                 <td className={item.task=="Outside" ? "noBorder MemberTaskOutside" : 
                                                item.task=="Washing" ? "noBorder MemberTaskWashing" :
                                                item.task=="Cleaning"? "noBorder MemberTaskCleaning" : "noBorder MemberTaskOther" }>
-                                        <div>{item.task}</div>
+                                    <div>{item.task}</div>
                                 </td>
-                                
-                                
-
                                 <td className='noBorder MemberRate' >
-                                {item.rate <= 25 ? (
-                                        <span className='ratelow'>{item.rate}%</span>
-                                    ) : (
-                                        item.rate <= 75 ? (
-                                            <span className='rateMeduim'>{item.rate}%</span>
-                                        ) : (<>{item.rate >= 75 ? (<span className='rateHigh'>{item.rate}%</span>) : (<>Nan</>) }</>)
-                                    )}
+                                {   item.rate <= 25 ? ( <span className='ratelow'>{item.rate}%</span> ) : 
+                                (   item.rate <= 75 ? ( <span className='rateMeduim'>{item.rate}%</span> ) : 
+                                (<>{item.rate >= 75 ? ( <span className='rateHigh'>{item.rate}%</span>) : 
+                                (<>Nan</>) }</>))}
                                 </td>
                             </tr>
                         </>
                     ))}
-                    
-
-                    
                 </tbody>
             </table>
         </div>
