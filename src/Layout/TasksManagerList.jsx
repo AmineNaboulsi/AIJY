@@ -1,12 +1,28 @@
-import React , {useState} from 'react'
+import React , {useEffect, useState} from 'react'
 
 
 function TasksManagerList({ ApplyChanged }) {
+
+    const [TaskList, setTaskList] = useState([]);
+
+
+    useEffect(() => {
+        fetch("https://cors-anywhere.herokuapp.com/https://www.jsonkeeper.com/b/JAWD")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((result) => setTaskList(result))
+        .catch((error) => alert("Fetch error: " + error.message));
+    }, []);
+    
   return (
     <div className="TasksManagement">
-        <div className="TitleTaskManager ">
+        {/* <div className="TitleTaskManager ">
             <h3 className='poppins'>Tasks Management</h3>
-        </div>
+        </div> */}
         <div className="Table">
             <table>
                 <thead className='poppins'> 
@@ -16,89 +32,38 @@ function TasksManagerList({ ApplyChanged }) {
                     <th>Rating</th>
                 </thead>
                 <tbody>
-                    <tr className='special-row'>
-                        <td className='MemberImage'>
-                        <div>
-                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" />
-                        </div>
-
+                    {TaskList&&TaskList.map((item , index)=>(
+                        <>
+                            <tr>
+                                <td className='noBorder MemberImage'>
+                                <div>
+                                    <img src={item.link} alt="" />
+                                </div>
+                                </td>
+                                <td className='noBorder MemberName'>
+                                        <h3>{item.name}</h3>
+                                </td>
+                                <td className={item.task=="Outside" ? "noBorder MemberTaskOutside" : 
+                                               item.task=="Washing" ? "noBorder MemberTaskWashing" :
+                                               item.task=="Cleaning"? "noBorder MemberTaskCleaning" : "noBorder MemberTaskOther" }>
+                                        <div>{item.task}</div>
+                                </td>
                                 
-                        </td>
-                        <td className='MemberName'>
-                                <h3 >Jawad Boulmal</h3>
-                        </td>
-                        <td className='MemberTask'>
-                            <div>
-                                Outside
-                            </div>
-                        </td>
-                        <td className='MemberRate'>
-                            10%
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td className='MemberImage'>
-                        <div>
-                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" />
-                        </div>
-
                                 
-                        </td>
-                        <td className='MemberName'>
-                                <h3 >Jawad Boulmal</h3>
-                        </td>
-                        <td className='MemberTask'>
-                            <div>
-                                Outside
-                            </div>
-                        </td>
-                        <td className='MemberRate'>
-                            10%
-                        </td>
-                    </tr>
 
-                    <tr>
-                        <td className='MemberImage'>
-                        <div>
-                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" />
-                        </div>
-
-                                
-                        </td>
-                        <td className='MemberName'>
-                                <h3 >Jawad Boulmal</h3>
-                        </td>
-                        <td className='MemberTask'>
-                            <div>
-                                Outside
-                            </div>
-                        </td>
-                        <td className='MemberRate'>
-                            10%
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td className='MemberImage'>
-                        <div>
-                            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" />
-                        </div>
-
-                                
-                        </td>
-                        <td className='MemberName'>
-                                <h3 >Jawad Boulmal</h3>
-                        </td>
-                        <td className='MemberTask'>
-                            <div>
-                                Outside
-                            </div>
-                        </td>
-                        <td className='MemberRate'>
-                            10%
-                        </td>
-                    </tr>
+                                <td className='noBorder MemberRate' >
+                                {item.rate <= 25 ? (
+                                        <span className='ratelow'>{item.rate}%</span>
+                                    ) : (
+                                        item.rate <= 75 ? (
+                                            <span className='rateMeduim'>{item.rate}%</span>
+                                        ) : (<>{item.rate >= 75 ? (<span className='rateHigh'>{item.rate}%</span>) : (<>Nan</>) }</>)
+                                    )}
+                                </td>
+                            </tr>
+                        </>
+                    ))}
+                    
 
                     
                 </tbody>
