@@ -1,0 +1,88 @@
+.SlideModeOpen{
+    position: fixed;
+    z-index: 1;
+    top : 0 ;
+    left : 0 ;
+    right : 0 ;
+    bottom : 0 ;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    transition: all 0.8s ease-in-out;
+    background-color: rgba(58, 78, 112, 0.365);
+}
+.SlideModeClose{
+    display: none;
+    
+}
+.slidebarleft{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 92, 140, 0.365);
+    backdrop-filter: blur(5px);
+    border-right: 1px solid #c4c4c4;
+    opacity: 1;
+    animation: slideOpend 0.8s ;
+}
+.slidebarleftclose{
+    width: 0px;
+    opacity: 0;
+    animation: slideclosed 0.8s ease-in-out ;
+}
+@keyframes slideclosed {
+    0%{
+        width: 100%; 
+    }
+    100%{
+        width: 0;
+    }
+}
+@keyframes slideOpend {
+    0%{
+        width: 0; 
+    }
+    100%{
+        width: 100%;
+    }
+}
+.titleslider{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 20px;
+    padding-block: 20px;
+    align-items: center;
+}
+.exitslider{
+    min-height: 35px ;
+    min-width: 35px;
+    transform: rotate(45deg);
+    color: rgb(31, 30, 30);
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.exitslider:hover{
+    color: red;
+    transform: rotate(135deg);
+    min-height: 50px ;
+    min-width: 50px;
+}
+
+.slidercontent{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.Itemslider{
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+    margin-inline: 40px;
+    padding-block: 15px;
+    padding-inline: 18px;
+    border-radius: 8px;
+    color: rgb(47, 45, 45);
+    transition: box-shadow 0.2s ;
+}
+.Itemslider:hover{
+    box-shadow:  1px 1px 6px #4147528c;
+}

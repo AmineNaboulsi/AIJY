@@ -14,7 +14,11 @@ function CardsMoney({message}) {
             <div className="repview">View Report</div>
           </div>
         </div>
-        <div className="Yesterday">Yesterday</div>
+        <div className="Yesterday">
+          <div className="titlle1">Yesterday</div>
+          <div className="payment">
+            -152 MAD</div>
+          </div>
       </div>
   )
 }

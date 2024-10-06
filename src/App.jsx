@@ -1,25 +1,31 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import './AppMobile.css'
+import {useState} from "react"
 import {Routes , Route , BrowserRouter} from 'react-router-dom'
-import LayoutPage from "./Component/LayoutPage"
 import Dashboard from "./Component/Dashborad"
 import Notfound from "./Component/NotFound"
 import Tasks from "./Component/Tasks"
 import Box from "./Component/Box/Box"
 import NavBar from "./Component/NavBar"
-import React, { useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
+import SliderBar from "./Component/SlideBar"
+
 import ParticlesBackground from "./Component/Particles";
 function App() {
+
+  const [isSliderOpen, setIsSliderOpen] = useState(false);
+
+  const toggleSlider = () => {
+    setIsSliderOpen(!isSliderOpen);
+  };
+
   return (
     <>
     <div>
             <ParticlesBackground />
-            <NavBar />
             <div className="BodyRoot">
             <BrowserRouter>
+            <NavBar toggleSlider={toggleSlider} />
+            <SliderBar isOpen={isSliderOpen} toggleSlider={toggleSlider}  />
             <Routes>
               <Route index  path="/" element={<Dashboard />} />
               <Route  path="/dashborad" element={<Dashboard />} />

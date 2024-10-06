@@ -9,7 +9,7 @@
     grid-template-columns: auto auto auto;
     gap: 15px;
     justify-content: center;
-    
+ 
 }
 .Arrow{
     display: flex;

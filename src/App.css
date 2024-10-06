@@ -23,8 +23,25 @@
 /* Style Up Bar  */
 nav{
   margin: 20px 0px 30px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+ }
+.MeniInco{
+  display: none;
+  grid-area: menuicon;
+}
+.logo{
+  grid-area: logo;
+  display: flex;
+  justify-content: start;
+}
+.LightMode{
+  grid-area: Mode;
+  justify-self: end;
+}
+.logosite{
+  height: 30px;
+  width: 30px;
 }
 .BarNav{
   max-width: 1518px;  position: relative;
@@ -32,27 +49,30 @@ nav{
   background-color: var(--PrimaryColor);
   width: 80%;
   height: 50px;
-  display: flex;
-  place-items: center;
-  justify-content: space-between;
-  grid-template-columns: 25% 1fr 25% ;
+  display: grid;
+  grid-template-areas: "logo menulist Mode" ;
+  align-items: center;
   padding-block: 10px;
   padding-inline: 40px;
   border: 1px solid rgb(208, 208, 208);
   border-radius: 50px;
+  grid-area: menulist;
+  
 }
 
 /* Style Of Menu Bar ( dashboard , tasks , box ) */
 .Menu{
   display: flex;
   gap: 30px;
+  justify-self: center;
 }
 .Option{
   color: #3a3a3a;
-  transform: scale(1.1rem);
-  font-family: sans-serif;
+  transform: scale(1rem);
   cursor: pointer;
   position: relative;
+  font-weight: 600;
+  
 }
 .Option::after {
   content: ' ';
@@ -65,6 +85,7 @@ nav{
   text-align: center;
   position: absolute;
   left: 50%;
+  transition: all 0.4s;
 }
 .Option:hover.Option::after {
   width: 100%;
@@ -78,7 +99,7 @@ nav{
 .active{
   color: #000000;
   cursor: pointer;
-  font-weight: bold;
+  
 } 
 .active::after{
   content: ' ';
@@ -88,18 +109,19 @@ nav{
   position: relative;
   background-color: rgb(0, 0, 0);
   transform: translateY(26px);
-  transition: .2s;
+  transition: all .2s;
 }
 
 /* Logo Style */
-.Logo , .LightMode{
+.Logo {
   margin: 0px 50px;
 } 
 
 /* Dashboard  */
 dashboard{
   display: grid;
-  grid-template-columns: 1fr 1fr auto ;
+  grid-template-areas: "tasklist cards calendar" 
+  "linecha linecha piecha" ;  
   gap: 15px;
   margin-block: 15px;
   margin-inline: 80px;
@@ -109,4 +131,19 @@ dashboard{
   border-radius:8px;
   box-shadow:0px 10px 15px #c1c1c1;
 
+}
+.TasksManagement{
+  grid-area: tasklist ;
+}
+.Calendar{
+  grid-area: calendar ;
+}
+.TodayYesterdaySpend{
+  grid-area: cards ;
+}
+.PieChart{
+  grid-area: piecha ; 
+}
+.LineChart{
+  grid-area: linecha ;
 }
