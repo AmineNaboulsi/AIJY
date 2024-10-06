@@ -1,8 +1,5 @@
 @media screen and (max-width : 1400px) {
-    .LineChart{
-      grid-column: 1 / 1;
-      background-color: aqua;
-    }  
+    
     dashboard{
       grid-template-areas: " cards calendar" 
       "tasklist tasklist"
@@ -20,8 +17,6 @@
       "piecha";  
         transition: all 0.4s;
       }
-      .LineChart{
-        grid-column: 1 / 1;
-      }
+      
      
 }
