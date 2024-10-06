@@ -18,6 +18,19 @@
       "linecha" 
       "piecha";  
         transition: all 0.4s;
-        margin-inline: 5px;
+        margin-inline: 10px;
       }
+      .BarNav{
+        grid-template-areas: "menuicon logo Mode" ;
+       }
+       .MeniInco{
+        display: block;
+      }
+      .Menu{
+        display: none;
+      }
+      .logo{
+        justify-content: center;
+      }
+      
 }

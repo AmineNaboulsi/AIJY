@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import '../App.css'
+import { LuMenu } from "react-icons/lu";
 import { useNavigate } from 'react-router-dom'
-function NavBar() {
+import { SiAlpinedotjs } from "react-icons/si";
+
+function NavBar({ toggleSlider }) {
   const [Ischeked , setIscheked] = useState({
     dashboard : true ,
     box :false , 
@@ -40,8 +43,9 @@ return (
     <>
     <nav>
     <div className='BarNav'>
-        <div className='Logo' >
-        </div>
+      <div className="logo"><SiAlpinedotjs className='logosite' />
+      </div>
+        <LuMenu onClick={toggleSlider} className='MeniInco' style={{height : "30px" , width : "30px"}}/>  
         <div className='Menu'>
             <div onClick={()=> HandledMenuCLick(1)} className={!Ischeked.dashboard ? "Option" : "active" }>Dashboard</div>
             <div onClick={()=> HandledMenuCLick(2)} className={!Ischeked.tasks ? "Option" : "active" } >Tasks</div>

@@ -23,8 +23,25 @@
 /* Style Up Bar  */
 nav{
   margin: 20px 0px 30px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+ }
+.MeniInco{
+  display: none;
+  grid-area: menuicon;
+}
+.logo{
+  grid-area: logo;
+  display: flex;
+  justify-content: start;
+}
+.LightMode{
+  grid-area: Mode;
+  justify-self: end;
+}
+.logosite{
+  height: 30px;
+  width: 30px;
 }
 .BarNav{
   max-width: 1518px;  position: relative;
@@ -32,21 +49,22 @@ nav{
   background-color: var(--PrimaryColor);
   width: 80%;
   height: 50px;
-  display: flex;
-  place-items: center;
-  justify-content: space-between;
-  grid-template-columns: 25% 1fr 25% ;
+  display: grid;
+  grid-template-areas: "logo menulist Mode" ;
+  align-items: center;
   padding-block: 10px;
   padding-inline: 40px;
   border: 1px solid rgb(208, 208, 208);
   border-radius: 50px;
+  grid-area: menulist;
+  
 }
 
 /* Style Of Menu Bar ( dashboard , tasks , box ) */
 .Menu{
   display: flex;
   gap: 30px;
-  
+  justify-self: center;
 }
 .Option{
   color: #3a3a3a;
@@ -95,7 +113,7 @@ nav{
 }
 
 /* Logo Style */
-.Logo , .LightMode{
+.Logo {
   margin: 0px 50px;
 } 
 
