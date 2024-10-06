@@ -13,7 +13,10 @@ function Tasks() {
           }
           return response.json();
         })
-        .then((result) => setInfos(result))
+        .then((result) => {
+          setInfos(result)
+          console.log(result);
+        })
         .catch((error) => alert("Fetch error: " + error.message));
     }, []);
 
@@ -23,12 +26,41 @@ function Tasks() {
 
     <div className='TasksContainer'>
       <div className="TasksContent">
-        {/* First Row */}
-        {Infos&&Infos.map((item , index)=>(
-        <>
-        {
-          index === 2 ? (
-            <div className="DateToday">
+              <div className="Arrow">
+                <svg viewBox="0 0 137 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M128.242 15.9853L128.026 17.9736L128.242 15.9853ZM135.687 18.217C136.548 17.5249 136.685 16.2659 135.993 15.4051L124.714 1.3765C124.022 0.515634 122.763 0.378812 121.903 1.07091C121.042 1.76299 120.905 3.02191 121.597 3.88277L131.622 16.3526L119.152 26.3777C118.291 27.0698 118.155 28.3287 118.847 29.1896C119.539 30.0505 120.798 30.1873 121.659 29.4952L135.687 18.217ZM128.026 17.9736L134.218 18.6465L134.65 14.6699L128.458 13.997L128.026 17.9736ZM4.89027 119.251C10.2347 56.9333 65.844 11.2156 128.026 17.9736L128.458 13.997C64.0466 6.9967 6.44127 54.3531 0.904898 118.909L4.89027 119.251Z" fill="black"/>
+                </svg>
+              </div>
+              <div className="MemberInfoss">
+                <div className="Task">
+                  <h1>cd sd</h1>
+                </div>
+                <div className="Image">
+                  <img src="https://intranet.youcode.ma/storage/users/profile/thumbnail/1086-1727859809.JPG" alt="" />
+                </div>
+                <div className="Name">
+                  <p>vdsv</p>
+                </div>
+              </div>
+
+              <div className="Arrow">
+                <svg viewBox="0 0 137 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M128.242 15.9853L128.026 17.9736L128.242 15.9853ZM135.687 18.217C136.548 17.5249 136.685 16.2659 135.993 15.4051L124.714 1.3765C124.022 0.515634 122.763 0.378812 121.903 1.07091C121.042 1.76299 120.905 3.02191 121.597 3.88277L131.622 16.3526L119.152 26.3777C118.291 27.0698 118.155 28.3287 118.847 29.1896C119.539 30.0505 120.798 30.1873 121.659 29.4952L135.687 18.217ZM128.026 17.9736L134.218 18.6465L134.65 14.6699L128.458 13.997L128.026 17.9736ZM4.89027 119.251C10.2347 56.9333 65.844 11.2156 128.026 17.9736L128.458 13.997C64.0466 6.9967 6.44127 54.3531 0.904898 118.909L4.89027 119.251Z" fill="black"/>
+                </svg>
+              </div>
+              <div className="MemberInfoss">
+                <div className="Task">
+                  <h1>cdsvdsv</h1>
+                </div>
+                <div className="Image">
+                  <img src="https://intranet.youcode.ma/storage/users/profile/thumbnail/1086-1727859809.JPG" alt="" />
+                </div>
+                <div className="Name">
+                  <p>vdsv</p>
+                </div>
+              </div>
+
+              <div className="DateToday">
               <svg  viewBox="0 0 112 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_42_1274)">
                 <rect width="112" height="109.745" rx="8" fill="white"/>
@@ -52,14 +84,19 @@ function Tasks() {
               <h1>19</h1>
 
             </div>
-          ) : (
-            // Change the Swipe state when the index is not 2
-            (index !== 2 && !Swipe) && setSwipe(true)
-        )}
 
-        {
-          Swipe === true ? (
-            <>
+            
+              <div className="MemberInfoss">
+                <div className="Task">
+                  <h1>cdsvdsv</h1>
+                </div>
+                <div className="Image">
+                  <img src="https://intranet.youcode.ma/storage/users/profile/thumbnail/1086-1727859809.JPG" alt="" />
+                </div>
+                <div className="Name">
+                  <p>vdsv</p>
+                </div>
+              </div>
               <div className="Arrow">
                 <svg viewBox="0 0 137 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M128.242 15.9853L128.026 17.9736L128.242 15.9853ZM135.687 18.217C136.548 17.5249 136.685 16.2659 135.993 15.4051L124.714 1.3765C124.022 0.515634 122.763 0.378812 121.903 1.07091C121.042 1.76299 120.905 3.02191 121.597 3.88277L131.622 16.3526L119.152 26.3777C118.291 27.0698 118.155 28.3287 118.847 29.1896C119.539 30.0505 120.798 30.1873 121.659 29.4952L135.687 18.217ZM128.026 17.9736L134.218 18.6465L134.65 14.6699L128.458 13.997L128.026 17.9736ZM4.89027 119.251C10.2347 56.9333 65.844 11.2156 128.026 17.9736L128.458 13.997C64.0466 6.9967 6.44127 54.3531 0.904898 118.909L4.89027 119.251Z" fill="black"/>
@@ -67,22 +104,21 @@ function Tasks() {
               </div>
               <div className="MemberInfoss">
                 <div className="Task">
-                  <h1>{item.task}</h1>
+                  <h1>cdsvdsv</h1>
                 </div>
                 <div className="Image">
                   <img src="https://intranet.youcode.ma/storage/users/profile/thumbnail/1086-1727859809.JPG" alt="" />
                 </div>
                 <div className="Name">
-                  <p>{item.name}</p>
+                  <p>vdsv</p>
                 </div>
               </div>
-            </>
-          ) : console.log("Hello")
-        }
-
-
-        </>
-      ))}
+              <div className="Arrow">
+                <svg viewBox="0 0 137 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M128.242 15.9853L128.026 17.9736L128.242 15.9853ZM135.687 18.217C136.548 17.5249 136.685 16.2659 135.993 15.4051L124.714 1.3765C124.022 0.515634 122.763 0.378812 121.903 1.07091C121.042 1.76299 120.905 3.02191 121.597 3.88277L131.622 16.3526L119.152 26.3777C118.291 27.0698 118.155 28.3287 118.847 29.1896C119.539 30.0505 120.798 30.1873 121.659 29.4952L135.687 18.217ZM128.026 17.9736L134.218 18.6465L134.65 14.6699L128.458 13.997L128.026 17.9736ZM4.89027 119.251C10.2347 56.9333 65.844 11.2156 128.026 17.9736L128.458 13.997C64.0466 6.9967 6.44127 54.3531 0.904898 118.909L4.89027 119.251Z" fill="black"/>
+                </svg>
+              </div>
+             
       </div>
     </div>
   )

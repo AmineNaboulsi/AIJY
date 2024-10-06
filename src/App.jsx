@@ -17,9 +17,10 @@ function App() {
     <>
     <div>
             <ParticlesBackground />
-            <NavBar />
+            
             <div className="BodyRoot">
             <BrowserRouter>
+            <NavBar />
             <Routes>
               <Route index  path="/" element={<Dashboard />} />
               <Route  path="/dashborad" element={<Dashboard />} />
