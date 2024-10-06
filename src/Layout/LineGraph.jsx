@@ -15,7 +15,6 @@ const xLabels = [
   return (
     <div className='LineChart'>
      <LineChart
-      width={500}
       height={300}
       series={[
         { data: uData, label: 'Mad' },
