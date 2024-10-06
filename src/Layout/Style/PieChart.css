@@ -1,0 +1,47 @@
+.Pie{
+  display : flex;
+  flex-direction: column;
+  gap: 15px ;  
+  margin: 0;
+  padding: 0;
+ 
+}
+.Pie .filter{
+display: flex;
+background-color: white;
+justify-content: space-between;
+padding: 15px;
+border-radius: 5px;
+margin-top: -2px;
+}
+.Pie .Fbuttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  }
+.Pie .filter .ApplyButton{
+  background-color: #364F78;
+  color : white ;
+ padding: 5px 15px;
+ border-radius: 5px;
+ border:none;
+ height: 35px;
+
+}
+.Pie .Fbuttons button{
+  background-color: #364F78;
+  color : white ;
+ padding: 5px 15px;
+ border-radius: 5px;
+ border:none;
+ height: 35px ;
+}
+
+.Pie .PieShape{
+  background-color: white;
+  border-radius: 5px;
+  height: fit-content;  
+  padding: 10px;
+ flex-grow: 1;
+}

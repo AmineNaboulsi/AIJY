@@ -11,15 +11,23 @@ function Calender({DateChanged}) {
   return (
     <div className='Calendar'>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DateCalendar 
-        label="Select Date"
-        value={selectedDate}
-        onChange={(newValue) => {
-          setSelectedDate(newValue);
-          DateChanged(selectedDate);
-        }}
-        renderInput={(params) => <TextField {...params} />}
-      />
+        <DateCalendar 
+          
+          label="Select Date"
+          value={selectedDate}
+          onChange={(newValue) => {
+            setSelectedDate(newValue);
+            DateChanged(selectedDate);
+          }}
+          renderInput={(params) => <TextField {...params} />}
+          sx={{
+            backgroundColor: '#fff',
+            borderRadius : '8px' ,
+            '& .MuiPickersCalendarHeader-root': {
+              backgroundColor: '#fff', 
+            }
+          }}
+        />
     </LocalizationProvider>
     </div>
     

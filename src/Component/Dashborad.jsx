@@ -3,7 +3,7 @@ import '../App.css'
 import TasksManagerList from '../Layout/TasksManagerList'
 import CardsMoney from '../Layout/CardsMoney'
 import Calender from '../Layout/Calender'
-import PieChart from '../Layout/PieChart'
+import PieChart from '../Layout/Pie'
 import LineGraph from '../Layout/LineGraph'
 
 

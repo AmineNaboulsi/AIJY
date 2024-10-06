@@ -1,0 +1,62 @@
+.TasksContainer{
+    margin: 0px 50px;
+    height: calc(100vh - 122px);
+    display: flex;
+    justify-content: center;
+}
+.TasksContent{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+    justify-content: center;
+ 
+}
+.Arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Arrow svg{
+    width: 112px;
+    
+}
+.DateToday svg{
+    width: 90px;
+}
+.Name p{
+    font-size: 13px;
+}
+.MemberInfoss{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.MemberInfoss .Task h1{
+    font-size: 20px;
+}
+.MemberInfoss img{
+    width: 80px;
+}
+
+.DateToday{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+.DateToday h1{
+position: absolute;
+top: 15px;    
+display: flex;
+justify-content: center;
+place-items: center;
+height: 100%;
+}
+
+
+.Arrow90Deg{
+    transform: rotate(90deg);
+}
+
+
