@@ -30,7 +30,6 @@ color: rgb(0, 255, 0);
 .TasksManagement{
     background-color: white;
     padding: 0px 20px;
-    height: fit-content;
     padding-bottom: 10px;
     width: clamp(auto , 500px , 100%) ;
   }
