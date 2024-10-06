@@ -1,6 +1,6 @@
 import React from 'react'
 import { LineChart } from '@mui/x-charts/LineChart';
-
+import './Style/LineGraph.css'
 function LineGraph() {
   const uData = [20, 30, 18, 13, 22, 32, 44];
 const xLabels = [

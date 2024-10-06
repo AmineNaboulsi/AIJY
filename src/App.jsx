@@ -1,6 +1,7 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import './AppMobile.css'
 import {Routes , Route , BrowserRouter} from 'react-router-dom'
 import LayoutPage from "./Component/LayoutPage"
 import Dashboard from "./Component/Dashborad"

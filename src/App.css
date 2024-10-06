@@ -102,7 +102,7 @@ nav{
 /* Dashboard  */
 dashboard{
   display: grid;
-  grid-template-columns: 1fr 1fr auto ;
+  grid-template-columns: repeat(3 , 1fr);
   gap: 15px;
   margin-block: 15px;
   margin-inline: 80px;
