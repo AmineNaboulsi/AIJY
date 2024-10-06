@@ -6,7 +6,7 @@ import LayoutPage from "./Component/LayoutPage"
 import Dashboard from "./Component/Dashborad"
 import Notfound from "./Component/NotFound"
 import Tasks from "./Component/Tasks"
-import Box from "./Component/Box"
+import Box from "./Component/Box/Box"
 import NavBar from "./Component/NavBar"
 import React, { useCallback } from "react";
 import Particles from "react-tsparticles";

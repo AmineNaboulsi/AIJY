@@ -1,0 +1,26 @@
+.Border{
+  border : 2px solid red ;
+}
+.BoxContainer{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin-inline: 50px;
+  gap: 50px;
+
+}
+.BoxContainer .BoxList{
+  
+}
+.BoxContainer .BoxList .Head{
+  font-weight: bold;
+}
+/*---------------------------------------Box Add Css--------------------------------------------------- */
+
+.BoxContainer .BoxDevAdd{
+  background-color: white;
+  width:auto;
+
+}
+.BoxContainer .AddCard{
+
+}
