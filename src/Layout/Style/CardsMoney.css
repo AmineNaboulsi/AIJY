@@ -11,12 +11,7 @@
     border: 1px solid #111926;
     display: grid;
 }
-.Yesterday{
-    background: linear-gradient(to right,#141D2D 10% , #3F5C8C 70%);
-    padding-block: 15px;
-    border-radius: 15px;
-    color: white;
-}
+
 .price{
     display: grid;
     grid-template-columns: auto 1fr ;
@@ -50,3 +45,17 @@
     height: 1px;
     border-radius: 2px;
 }
+.Yesterday{
+    background: linear-gradient(to right,#141D2D 10% , #3F5C8C 70%);
+    padding-block: 15px;
+    border-radius: 15px;    
+    color: white;
+    padding-inline: 15px;
+    
+
+}
+.payment{
+    font-size: 19px;
+    font-weight: 700px;
+}
+

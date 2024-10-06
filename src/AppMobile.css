@@ -5,7 +5,9 @@
       "tasklist tasklist"
       "linecha piecha" ;  
         transition: all 0.4s;
+        margin-inline: 20px;
       }
+    
      
 }
 @media screen and (max-width : 1000px) {
@@ -16,7 +18,6 @@
       "linecha" 
       "piecha";  
         transition: all 0.4s;
+        margin-inline: 5px;
       }
-      
-     
 }
