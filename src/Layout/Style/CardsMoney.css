@@ -1,0 +1,52 @@
+.TodayYesterdaySpend{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 22px;
+}
+.Today{
+    background-color:#fff;
+    padding-block: 15px;
+    padding-inline: 15px;
+    border-radius: 15px;
+    border: 1px solid #111926;
+    display: grid;
+}
+.Yesterday{
+    background: linear-gradient(to right,#141D2D 10% , #3F5C8C 70%);
+    padding-block: 15px;
+    border-radius: 15px;
+    color: white;
+}
+.price{
+    display: grid;
+    grid-template-columns: auto 1fr ;
+    align-items: center;
+    gap: 5px;
+}
+.price span{
+    font-weight: 500;
+    
+}
+.price h2 {
+    font-size: 25px;
+    
+}
+.amonthspend , .titleCard{
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.viewrep{
+    margin-top: 10px;
+    display: grid;
+    gap: 5px;
+}
+.repview{
+    font-size: 13px;
+    font-weight: 500;
+}
+.barhr{
+    background-color: #3C3434;
+    height: 1px;
+    border-radius: 2px;
+}
