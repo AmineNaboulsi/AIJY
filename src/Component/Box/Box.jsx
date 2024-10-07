@@ -7,7 +7,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { IoIosArrowBack } from "react-icons/io";
+import { IoIosAddCircleOutline } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+
 import './BoxStyle.css';
 /* ------------------------------------------------------------------------ */
 function createData(
@@ -62,23 +64,27 @@ function Box() {
        </div>
        {/* --------------------------------------------------------------- */}
        <div className='BoxDevAdd '>
-       <div className="">
-        <div className='AddUpdate '>
-            <p>Add / Update</p>
+       <div className='UpAll'>
+        <div className={showConstraints ? 'AddUpdate ' :'AddUpdateClosed' }>
+          
+            <p className={!showConstraints ? 'ParagraphAddUpdate' :'ParagraphAddUpdateOpen' }> <IoIosAddCircleOutline /> <span>Add</span><span>/</span><span>Update</span>  </p>
 
-            <button onClick={toggleConstraints}>
+            <div onClick={toggleConstraints}>
                 {showConstraints ? <IoIosArrowForward /> :<IoIosArrowBack /> }
-            </button>
+            </div>
        </div>
             {showConstraints && (
                 <div className="AddCard">
-                  <div>
-                    <label htmlFor="Product">Product name</label>
-                       <input type="text" name="" id="Product" />
+                  <div className='InputInfo'>
+                      <label htmlFor="Product">Product name</label>
+                      <input type="text" name="" id="Product" />
                   </div>
-                  <div>
-                    <label htmlFor="Price">Product name</label>
-                       <input type="text" name="" id="Price" />
+                  <div className='InputInfo'>
+                      <label htmlFor="Price">Product Price</label>
+                      <input type="number" name="" id="Price" />
+                  </div>
+                  <div style={{textAlign:"right"}}>
+                      <button className='SubmitBtn'>Submit</button>
                   </div>
                        
                 </div>

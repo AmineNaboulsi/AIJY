@@ -5,12 +5,10 @@
   display: grid;
   grid-template-columns: 1fr auto;
   margin-inline: 50px;
-  gap: 50px;
+  gap: 20px;
 
 }
-.BoxContainer .BoxList{
-  
-}
+
 .BoxContainer .BoxList .Head{
   font-weight: bold;
 }
@@ -19,8 +17,80 @@
 .BoxContainer .BoxDevAdd{
   background-color: white;
   width:auto;
-
+  border-radius: 8px;
+  
 }
-.BoxContainer .AddCard{
+.SubmitBtn{
+  background: rgba(255, 0, 0, 0);
+  border: 1px solid rgb(0, 116, 33);
+  color:rgb(0, 116, 33) ;
+  padding-inline: 15px;
+  padding-block: 8px;
+  margin-bottom: 25px;
+  border-radius: 5px  ;
+}
+.AddUpdate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.AddUpdateClosed{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 0px 10px 0px;
+  width: 40px;
+  align-items: center;
+}
+.UpAll{
+  height: calc(100% - 20px) ;
+}
+.ParagraphAddUpdate{
+  transform:rotate(90deg) translate(50%);
+  background-color: #ECECEC;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap:3px;
+}
+.ParagraphAddUpdateOpen{
+  transform:rotate(0deg) translate(0%);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap:10px;
+}
+.AddCard{
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.AddCard label{
+  font-size: 0.9rem;
+  padding-left: 10px;
+}
+.InputInfo{
+  display: flex;
+  flex-direction: column;
+}
+.InputInfo input{
+  height: 30px;
+  width: 400px;
+}
 
+
+
+
+/* Mobile Css */
+@media screen and (max-width : 1400px) {
+   
+}
+@media screen and (max-width : 1000px) {
+
+    
 }
