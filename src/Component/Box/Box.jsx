@@ -1,4 +1,5 @@
 import React , {useState , useEffect} from 'react'
+import {useNavigate} from 'react-router-dom'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -11,41 +12,44 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import './BoxStyle.css';
 /* ------------------------------------------------------------------------ */
-function createData(
-   NameProduct , Price, DateBuying
-) {
-  return { NameProduct, Price, DateBuying };
-}
 
 
-const rows = [
-  createData('Pizza', 159, '12/03/2024'),
-  createData('Tajine', 237, '02/03/2024'),
-  createData('Kfta', 262, '22/03/2024'),
-];
+
 /* ------------------------------------------------------------------------ */
 function Box() {
-
-    // State for toggling each section
+  const navigate = useNavigate()
+  // State for toggling each section
+    const [Data , setData] = useState({
+      productname : "" ,
+      productPrice : 0
+    });
     const [showConstraints, setShowConstraints] = useState(false);
     const [datalist, setdatalist] = useState([]);
+    const HandleClickSubmit = () => {
+      fetch(`http://localhost:3040/P/AddProduct?pname=${Data.productname}&pprice=${Data.productPrice}`)
+      .then(res=>res.json())
+      .then(data=>{
+      })
+    }
     useEffect(()=>{
       fetch("http://localhost:3040/P/getProduct")
       .then(res=>res.json())
       .then(data=>setdatalist(data));
-    } , []);
+    } , [HandleClickSubmit]);
     // Toggle functions
     const toggleConstraints = () => setShowConstraints(!showConstraints);
     const FormatDate = (date_) =>{
       const date = new Date(date_);
       return `${date.getDay()}-${date.getMonth()}-${date.getFullYear()}`
     }
+   
     return (
+
     <div>
     <div className='BoxContainer '>
 
        <div className='BoxList'>
-       <TableContainer component={Paper}>
+       <TableContainer style={{maxHeight:"70vh"}} component={Paper}>
       <Table  aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -86,14 +90,46 @@ function Box() {
                 <div className="AddCard">
                   <div className='InputInfo'>
                       <label htmlFor="Product">Product name</label>
-                      <input  type="text" name="" id="Product" />
+                      <input 
+                      value={Data.productname}
+                      onChange={
+                        (e) => {
+                          setData(p => ({
+                            ...p ,
+                            productname : e.target.value
+                          }));
+                          console.log(Data)
+                        }
+                      } 
+                      type="text" 
+                      name="" 
+                      id="Product"
+                      />
                   </div>
                   <div className='InputInfo'>
                       <label htmlFor="Price">Product Price</label>
-                      <input type="number" name="" id="Price" />
+                      <input 
+                      value={Data.productPrice}
+                      onChange={
+                        (e) => {
+                          setData(p => ({
+                            ...p ,
+                            productPrice : e.target.value
+                          }));
+                          console.log(Data)
+                        }
+                      } 
+                      type="number" 
+                      name="" 
+                      id="Price" 
+                      />
                   </div>
                   <div style={{textAlign:"right"}}>
-                      <button className='SubmitBtn'>Submit</button>
+                      <button 
+                      onClick={
+                        HandleClickSubmit
+                      }
+                      className='SubmitBtn'>Submit</button>
                   </div>
                        
                 </div>
