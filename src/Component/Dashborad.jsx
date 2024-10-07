@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../App.css'
 import TasksManagerList from '../Layout/TasksManagerList'
 import CardsMoney from '../Layout/CardsMoney'
+import CardsMoneyJawad from '../Layout/CardsMoneyJawad'
 import Calender from '../Layout/Calender'
 import PieChart from '../Layout/Pie'
 import LineGraph from '../Layout/LineGraph'
@@ -19,7 +20,8 @@ function Dashborad() {
   return (
     <dashboard>
       <TasksManagerList message={msg} />
-      <CardsMoney message={msg}/>
+      <CardsMoneyJawad message={msg}/>
+      {/* <CardsMoney message={msg}/> */}
       <Calender DateChanged={DateChanged}/>
       <LineGraph  message={msg}/>
       <PieChart ApplyChanged={ApplyChanged}/>

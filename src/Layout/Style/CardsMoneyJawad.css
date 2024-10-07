@@ -1,0 +1,100 @@
+.TodayYesterdaySpend{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 22px;
+}
+.Today{
+    background-color:#fff;
+    padding-block: 15px;
+    padding-inline: 15px;
+    border-radius: 15px;
+    border: 1px solid #111926;
+    display: grid;
+}
+
+.price{
+    display: grid;
+    grid-template-columns: auto 1fr ;
+    align-items: center;
+    gap: 5px;
+}
+.price span{
+    font-weight: 500;
+    
+}
+.price h2 {
+    font-size: 25px;
+    
+}
+.amonthspend{
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.titleCard{
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.viewrep{
+    margin-top: 10px;
+    display: grid;
+    gap: 5px;
+}
+.repview{
+    font-size: 13px;
+    font-weight: 500;
+}
+.barhr{
+    background-color: #3C3434;
+    height: 1px;
+    border-radius: 2px;
+}
+.Yesterday{
+    background: linear-gradient(to right,#141D2D 10% , #3F5C8C 70%);
+    padding-block: 15px;
+    border-radius: 15px;    
+    color: white;
+    padding-inline: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+.titlle1{
+    color: rgba(196, 196, 196, 0.901);
+    font-weight: 100;
+    font-size: 18px;
+}
+.payment{
+    font-size: 25px;
+    font-weight: 700px;
+}
+
+
+
+
+.Percentage{
+    display: flex;
+    font-size: 15px;
+    place-items: center;
+    gap: 10px;
+}
+.ViewPort{
+    place-items: center;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid rgb(212, 212, 212);
+    padding-top: 10px;
+    font-weight: 100;
+    font-size: 13px;
+}
+.Pers{
+    color: #39BF36;
+}
+
+.minus{
+    font-size: 0.6rem;
+    color: #B7B5B5;
+    font-weight: 100;
+}
