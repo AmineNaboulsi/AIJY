@@ -25,14 +25,18 @@ function Box() {
     });
     const [showConstraints, setShowConstraints] = useState(false);
     const [datalist, setdatalist] = useState([]);
+    const url = import.meta.env.VITE_url;
+
     const HandleClickSubmit = () => {
-      fetch(`http://localhost:3040/P/AddProduct?pname=${Data.productname}&pprice=${Data.productPrice}`)
+      fetch(`${url}/P/AddProduct?pname=${Data.productname}&pprice=${Data.productPrice}`)
       .then(res=>res.json())
       .then(data=>{
       })
     }
+    const [datalist, setdatalist] = useState([]);
+
     useEffect(()=>{
-      fetch("http://localhost:3040/P/getProduct")
+      fetch(`${url}/P/getProduct`)
       .then(res=>res.json())
       .then(data=>setdatalist(data));
     } , [HandleClickSubmit]);
