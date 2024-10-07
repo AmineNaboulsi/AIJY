@@ -37,7 +37,7 @@ function Box() {
 
        <div className='BoxList'>
        <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 800 }} aria-label="simple table">
+      <Table  aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell className='Head'>Product Name  </TableCell>
