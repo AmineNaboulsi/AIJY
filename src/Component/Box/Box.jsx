@@ -19,9 +19,9 @@ function createData(
 }
 
 const rows = [
-  createData('ker machwi', 159, '12/03/20224'),
-  createData('Sowa 7lowa', 237, '02/03/20224'),
-  createData('Trma bida', 262, '22/03/20224'),
+  createData('Pizza', 159, '12/03/2024'),
+  createData('Tajine', 237, '02/03/2024'),
+  createData('Kfta', 262, '22/03/2024'),
 ];
 /* ------------------------------------------------------------------------ */
 function Box() {
