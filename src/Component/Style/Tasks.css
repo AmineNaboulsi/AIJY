@@ -1,5 +1,5 @@
 .TasksContainer{
-    margin: 0px 50px;
+    margin: 0px 50px 120px;
     height: calc(100vh - 122px);
     display: flex;
     justify-content: center;
@@ -7,9 +7,9 @@
 .TasksContent{
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 15px;
+    gap: 70px;
     justify-content: center;
- 
+    max-height: 440px;
 }
 .Arrow{
     display: flex;
@@ -17,11 +17,20 @@
     align-items: center;
 }
 .Arrow svg{
-    width: 112px;
+    width: 80px;
     
 }
 .DateToday svg{
     width: 90px;
+}
+.month{
+    position: absolute;
+    top: 31px;    
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    font-size: .9rem;
+    color: white;
 }
 .Name p{
     font-size: 13px;
@@ -37,6 +46,7 @@
 }
 .MemberInfoss img{
     width: 80px;
+    border-radius: 8px;
 }
 
 .DateToday{
@@ -44,8 +54,9 @@
     display: flex;
     justify-content: center;
     place-items: center;
+    transform: translate(-182% , -159%);
 }
-.DateToday h1{
+.DateToday .Day{
 position: absolute;
 top: 15px;    
 display: flex;
@@ -53,10 +64,32 @@ justify-content: center;
 place-items: center;
 height: 100%;
 }
-
-
-.Arrow90Deg{
+.ROTATE2{
+    transform:translate(123% , 91%) rotate(179deg)
+}
+.ROTATE1{
+    transform: rotate(84deg) translate(86px ,46px); 
+}
+.ROTATE3{
+    transform: rotate(-90deg) translate(87px ,28px); 
+}
+.ROTATE0{
+    transform:  rotate(0deg) translate(40px ,84px); 
+}
+.Arrow90ROTATE2Deg{
     transform: rotate(90deg);
 }
 
 
+@media only screen and (max-width: 560px) {
+    .Name p{
+        font-size: 10px;
+    }
+    .DateToday{
+        transform:translate(-172% , -148%);
+    }
+    .ROTATE2{
+        transform: translate(142% , 94%) rotate(179deg);
+    }
+   
+  }
