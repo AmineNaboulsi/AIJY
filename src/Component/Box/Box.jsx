@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React , {useState , useEffect} from 'react'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -9,7 +9,6 @@ import Paper from '@mui/material/Paper';
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-
 import './BoxStyle.css';
 /* ------------------------------------------------------------------------ */
 function createData(
@@ -17,6 +16,7 @@ function createData(
 ) {
   return { NameProduct, Price, DateBuying };
 }
+
 
 const rows = [
   createData('Pizza', 159, '12/03/2024'),
@@ -28,10 +28,19 @@ function Box() {
 
     // State for toggling each section
     const [showConstraints, setShowConstraints] = useState(false);
-
+    const [datalist, setdatalist] = useState([]);
+    useEffect(()=>{
+      fetch("http://localhost:3040/P/getProduct")
+      .then(res=>res.json())
+      .then(data=>setdatalist(data));
+    } , []);
     // Toggle functions
     const toggleConstraints = () => setShowConstraints(!showConstraints);
-  return (
+    const FormatDate = (date_) =>{
+      const date = new Date(date_);
+      return `${date.getDay()}-${date.getMonth()}-${date.getFullYear()}`
+    }
+    return (
     <div>
     <div className='BoxContainer '>
 
@@ -46,16 +55,16 @@ function Box() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {datalist.map((row) => (
             <TableRow
-              key={row.NameProduct}
+              key={row._id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.NameProduct}
+                {row.productName}
               </TableCell>
-              <TableCell>{row.Price}</TableCell>
-              <TableCell >{row.DateBuying}</TableCell>
+              <TableCell>{row.productPrice}</TableCell>
+              <TableCell style={{width : "150px"}}   >{FormatDate(row.productDate) }</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -77,7 +86,7 @@ function Box() {
                 <div className="AddCard">
                   <div className='InputInfo'>
                       <label htmlFor="Product">Product name</label>
-                      <input type="text" name="" id="Product" />
+                      <input  type="text" name="" id="Product" />
                   </div>
                   <div className='InputInfo'>
                       <label htmlFor="Price">Product Price</label>
