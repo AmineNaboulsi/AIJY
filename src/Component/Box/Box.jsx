@@ -23,6 +23,8 @@ function Box() {
       productPrice : 0
     });
     const [showConstraints, setShowConstraints] = useState(0);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
     const [datalist, setdatalist] = useState([]);
     const url = import.meta.env.VITE_url;
 
@@ -32,20 +34,31 @@ function Box() {
       .then(data=>{})
     }
     const handleResize = () => {
-      if (window.innerWidth <= 1000) {
-        setShowConstraints(3)
-      } else {
-        if(showConstraints==3)
-          setShowConstraints(0)
+      // Check if the width has changed
+      if (window.innerWidth !== windowWidth) {
+        // Update width state
+        setWindowWidth(window.innerWidth);
+        
+        // Only update showConstraints based on width
+        if (window.innerWidth <= 1000) {
+          setShowConstraints(3);  // Set constraints to 3 when width is <= 1000
+        } else {
+          if (showConstraints === 3) {
+            setShowConstraints(0);  // Reset constraints if it was previously set to 3
+          }
+        }
+        console.log("resizing width");
       }
-      
-    }
+    };
     useEffect(()=>{
       window.addEventListener("resize", handleResize)
       fetch(`${url}/P/getProduct`)
       .then(res=>res.json())
       .then(data=>setdatalist(data));
-    } , [HandleClickSubmit]);
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    } , [windowWidth , HandleClickSubmit]);
     // Toggle functions
     const toggleConstraints = () => {
          if(showConstraints==0)
