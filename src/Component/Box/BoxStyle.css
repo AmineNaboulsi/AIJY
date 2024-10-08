@@ -4,13 +4,22 @@
 .BoxContainer{
   display: grid;
   grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr;
   margin-inline: 50px;
   gap: 20px;
   min-height: 80vh;
 }
 
+.tablelistatsks{
+  min-height: 80vh;
+}
+
 .BoxContainer .BoxList .Head{
   font-weight: bold;
+
+}
+.BoxList{
+  height: inherit;
 }
 /*---------------------------------------Box Add Css--------------------------------------------------- */
 
@@ -18,7 +27,7 @@
   background-color: white;
   width:auto;
   border-radius: 8px;
-  
+
 }
 .SubmitBtn{
   background: rgba(255, 0, 0, 0);
@@ -29,14 +38,15 @@
   margin-bottom: 25px;
   border-radius: 5px  ;
 }
-.AddUpdate {
+.AddUpdateOpenV {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
-.AddUpdateClosed{
+
+.AddUpdateClosedV{
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -80,9 +90,24 @@
 }
 .InputInfo input{
   height: 30px;
-  width: 400px;
+  min-width: 300px;
 }
 
+.AddUpdateOpenH{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px;
+
+}
+.AddUpdateClosedH{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px;
+}
 
 
 
@@ -91,6 +116,12 @@
    
 }
 @media screen and (max-width : 1000px) {
+  
+  .BoxContainer{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-inline: 15px;
 
+  }
     
 }

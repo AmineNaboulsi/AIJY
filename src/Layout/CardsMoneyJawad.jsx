@@ -51,13 +51,6 @@ const fabStyle = {
   right: 16,
 };
 
-const fabGreenStyle = {
-  color: 'common.white',
-  bgcolor: green[500],
-  '&:hover': {
-    bgcolor: green[600],
-  },
-};
 
 function CardsMoneyJawad({ message }) {
   const [allamonth, setAllamonth] = useState();
@@ -69,7 +62,6 @@ function CardsMoneyJawad({ message }) {
     const url = import.meta.env.VITE_url;
     if(Amonthdeposit===""){
       alert("Required amount");
-      
       return ;
     }
     fetch(`${url}/c/depo?mdeposed=${Amonthdeposit}`)
@@ -127,7 +119,11 @@ function CardsMoneyJawad({ message }) {
       <div className="Today">
         <div className='titleCard'>Today</div>
         <div className="price">
-          <h2>{allamonth && allamonth.amonth} MAD</h2>
+        {allamonth ? <h2> {allamonth.amonth} MAD</h2> :
+        <>
+          
+        </> }
+          
           <span className="reset">- Reset</span>
         </div>
         <div className="amonthspend">For now (- 150 MAD)</div>

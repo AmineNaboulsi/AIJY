@@ -10,6 +10,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import './BoxStyle.css';
+import '../../AppMobile.css'
 /* ------------------------------------------------------------------------ */
 
 
@@ -21,7 +22,7 @@ function Box() {
       productname : "" ,
       productPrice : 0
     });
-    const [showConstraints, setShowConstraints] = useState(false);
+    const [showConstraints, setShowConstraints] = useState(0);
     const [datalist, setdatalist] = useState([]);
     const url = import.meta.env.VITE_url;
 
@@ -30,14 +31,33 @@ function Box() {
       .then(res=>res.json())
       .then(data=>{})
     }
-
+    const handleResize = () => {
+      if (window.innerWidth <= 1000) {
+        setShowConstraints(3)
+      } else {
+        if(showConstraints==3)
+          setShowConstraints(0)
+      }
+      
+    }
     useEffect(()=>{
+      window.addEventListener("resize", handleResize)
       fetch(`${url}/P/getProduct`)
       .then(res=>res.json())
       .then(data=>setdatalist(data));
     } , [HandleClickSubmit]);
     // Toggle functions
-    const toggleConstraints = () => setShowConstraints(!showConstraints);
+    const toggleConstraints = () => {
+         if(showConstraints==0)
+            setShowConstraints(1)
+         else if(showConstraints==1)
+          setShowConstraints(0)
+         else if(showConstraints==2)
+          setShowConstraints(3)
+         else if(showConstraints==3)
+          setShowConstraints(2)
+        
+    };
     const FormatDate = (date_) =>{
       const date = new Date(date_);
       return `${date.getDay()}-${date.getMonth()}-${date.getFullYear()}`
@@ -49,8 +69,8 @@ function Box() {
     <div className='BoxContainer '>
 
        <div className='BoxList'>
-       <TableContainer style={{maxHeight:"70vh"}} component={Paper}>
-      <Table  aria-label="simple table">
+       <TableContainer style={{maxHeight:"80vh"}} component={Paper}>
+      <Table className='tablelistatsks' aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell className='Head'>Product Name  </TableCell>
@@ -78,15 +98,25 @@ function Box() {
        {/* --------------------------------------------------------------- */}
        <div className='BoxDevAdd '>
        <div className='UpAll'>
-        <div className={showConstraints ? 'AddUpdate ' :'AddUpdateClosed' }>
+        <div className=
+        {showConstraints==0 ? 'AddUpdateClosedV' :
+          showConstraints==1 ? 'AddUpdateOpenV':
+          showConstraints==2 ? 'AddUpdateClosedH':
+          showConstraints==3 ? 'AddUpdateOpenH':''
+         }>
           
-            <p className={!showConstraints ? 'ParagraphAddUpdate' :'ParagraphAddUpdateOpen' }> <IoIosAddCircleOutline /> <span>Add</span><span>/</span><span>Update</span>  </p>
+            <p className={
+              showConstraints==0 ? 'ParagraphAddUpdate ' :
+              showConstraints==1 ? 'ParagraphAddUpdateOpen':
+              showConstraints==2 ? 'ParagraphAddUpdateOpen':
+              showConstraints==3 ? 'ParagraphAddUpdateOpen':''
+              }> <IoIosAddCircleOutline /> <span>Add</span><span>/</span><span>Update</span>  </p>
 
             <div onClick={toggleConstraints}>
                 {showConstraints ? <IoIosArrowForward /> :<IoIosArrowBack /> }
             </div>
        </div>
-            {showConstraints && (
+            {showConstraints==1 ? (
                 <div className="AddCard">
                   <div className='InputInfo'>
                       <label htmlFor="Product">Product name</label>
@@ -133,7 +163,55 @@ function Box() {
                   </div>
                        
                 </div>
-                   )}
+                ):showConstraints==2?(<>
+                <div className="AddCard">
+                  <div className='InputInfo'>
+                      <label htmlFor="Product">Product name</label>
+                      <input 
+                      value={Data.productname}
+                      onChange={
+                        (e) => {
+                          setData(p => ({
+                            ...p ,
+                            productname : e.target.value
+                          }));
+                          console.log(Data)
+                        }
+                      } 
+                      type="text" 
+                      name="" 
+                      id="Product"
+                      />
+                  </div>
+                  <div className='InputInfo'>
+                      <label htmlFor="Price">Product Price</label>
+                      <input 
+                      value={Data.productPrice}
+                      onChange={
+                        (e) => {
+                          setData(p => ({
+                            ...p ,
+                            productPrice : e.target.value
+                          }));
+                          console.log(Data)
+                        }
+                      } 
+                      type="number" 
+                      name="" 
+                      id="Price" 
+                      />
+                  </div>
+                  <div style={{textAlign:"right"}}>
+                      <button 
+                      onClick={
+                        HandleClickSubmit
+                      }
+                      className='SubmitBtn'>Submit</button>
+                  </div>
+                       
+                </div>
+                </>):<></>
+}
         </div>
        </div>
       
