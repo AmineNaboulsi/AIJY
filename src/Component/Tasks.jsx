@@ -15,7 +15,7 @@ function Tasks() {
   }, []);
     const url = import.meta.env.VITE_url;
     useEffect(() => {
-        fetch(url)
+        fetch(url+'/taskslist')
         .then((response) => {
           if (!response.ok) {
             throw new Error("Network response was not ok");
