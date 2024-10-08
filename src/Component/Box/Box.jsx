@@ -17,7 +17,6 @@ import './BoxStyle.css';
 
 /* ------------------------------------------------------------------------ */
 function Box() {
-  const navigate = useNavigate()
   // State for toggling each section
     const [Data , setData] = useState({
       productname : "" ,
@@ -30,10 +29,8 @@ function Box() {
     const HandleClickSubmit = () => {
       fetch(`${url}/P/AddProduct?pname=${Data.productname}&pprice=${Data.productPrice}`)
       .then(res=>res.json())
-      .then(data=>{
-      })
+      .then(data=>{})
     }
-    const [datalist, setdatalist] = useState([]);
 
     useEffect(()=>{
       fetch(`${url}/P/getProduct`)
