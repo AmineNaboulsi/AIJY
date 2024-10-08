@@ -11,8 +11,7 @@ function Calender({DateChanged}) {
   return (
     <div className='Calendar'>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DateCalendar 
-          
+        <DateCalendar  
           label="Select Date"
           value={selectedDate}
           onChange={(newValue) => {

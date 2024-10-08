@@ -88,6 +88,7 @@
     padding-top: 10px;
     font-weight: 100;
     font-size: 13px;
+    cursor: pointer;
 }
 .Pers{
     color: #39BF36;
@@ -97,4 +98,75 @@
     font-size: 0.6rem;
     color: #B7B5B5;
     font-weight: 100;
+}
+.cardcaisse{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left : 0 ;
+    bottom: 0 ;
+    backdrop-filter: blur(5px);
+    z-index: 2;
+    display: grid;
+    place-items: center ;
+}
+.cardcaisseclosed{
+    display: none;
+}
+
+.cardpanel{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(203, 203, 203);
+    border-radius: 15px;
+    padding-inline: 30px;
+    padding-block: 30px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.paneltitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.paneltitle span{
+    font-size: 18px;
+}
+.paneltitle button{
+    border: none;
+    background-color: #a1a3a1;
+    color: white;
+    border-radius: 6px;
+    width: 30px;
+    height: 30px ;
+    transform: all 0.2s;
+    cursor: pointer;
+}
+.paneltitle button:hover{
+    background-color: #f57474;
+}
+.itemdepose{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    gap: 5px;
+    border: 1xp solid red;
+}
+.itemdepose span{
+    margin-left: 10px;
+}
+.deposetmsg{
+    padding-block: 10px;
+    padding-inline: 10px;
+    background-color: #38bf3643;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    margin-top: 70px;
+    margin-left: 10px;
+    border-radius: 5px;
 }

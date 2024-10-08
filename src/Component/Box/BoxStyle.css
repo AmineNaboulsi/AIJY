@@ -6,7 +6,7 @@
   grid-template-columns: 1fr auto;
   margin-inline: 50px;
   gap: 20px;
-
+  min-height: 80vh;
 }
 
 .BoxContainer .BoxList .Head{

@@ -1,12 +1,13 @@
 import React , {useEffect, useState} from 'react'
 import './Style/CardsMoney.css'
 function CardsMoney({message}) {
+
   return (
     <div  className='TodayYesterdaySpend' >
         <div className="Today">
           <div className='titleCard'>today</div>
           <div className="price">
-            <h2>356 MAD</h2>
+            <h2>ezvfdnbtdnd,d MAD</h2>
             <span className="reset">-Reset</span></div>
           <div className="amonthspend">For now ( - 150 MAD)</div>
           <div className="viewrep">
