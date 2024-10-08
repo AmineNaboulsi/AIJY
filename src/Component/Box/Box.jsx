@@ -67,7 +67,7 @@ function Box() {
               <TableCell component="th" scope="row">
                 {row.productName}
               </TableCell>
-              <TableCell>{row.productPrice}</TableCell>
+              <TableCell>{row.productPrice} MAD</TableCell>
               <TableCell style={{width : "150px"}}   >{FormatDate(row.productDate) }</TableCell>
             </TableRow>
           ))}
