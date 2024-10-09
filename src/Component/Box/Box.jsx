@@ -11,7 +11,7 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import './BoxStyle.css';
 import '../../AppMobile.css'
-import Cookies from 'js-cookie';
+//import Cookies from 'js-cookie';
 
 /* ------------------------------------------------------------------------ */
 
