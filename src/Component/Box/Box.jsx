@@ -54,12 +54,16 @@ function Box() {
     };
     useEffect(()=>{
       window.addEventListener("resize", handleResize)
-      fetch(`${url}/P/getProduct`)
-      .then(res=>res.json())
-      .then(data=>setdatalist(data));
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
+        const fetchData = async () => {
+                  fetch(`${url}/P/getProduct`)
+              .then(res=>res.json())
+              .then(data=>setdatalist(data));
+          };
+        
+        fetchData();
+        return () => {
+          window.removeEventListener("resize", handleResize);
+        };
     } , [windowWidth , HandleClickSubmit]);
     // Toggle functions
     const toggleConstraints = () => {

@@ -126,7 +126,7 @@ function CardsMoneyJawad({ message }) {
           
           <span className="reset">- Reset</span>
         </div>
-        <div className="amonthspend">For now (- 150 MAD)</div>
+        <div className="amonthspend">For now (- {allamonth&&allamonth.todayamonth} MAD)</div>
         <div  className="viewrep">
           <div onClick={HandledReport} className="ViewPort">
             <p>View Report</p>
@@ -137,7 +137,7 @@ function CardsMoneyJawad({ message }) {
 
       <div className="Yesterday">
         <div className="titlle1"><p>Yesterday</p></div>
-        <div className="payment"><p>-152 MAD</p></div>
+        <div className="payment"><p>-{allamonth&&allamonth.yestrdayamonth} MAD</p></div>
         <div className="Percentage">
           <div style={{ display: "flex", alignItems: "center", fontWeight: "100" }} className='Pers'>
             <MdArrowOutward />
