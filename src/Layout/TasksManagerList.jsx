@@ -1,6 +1,7 @@
 import React , {useEffect, useState} from 'react'
 import "./Style/TasksManagerList.css"
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function TasksManagerList({ ApplyChanged }) {
     const [TaskList, setTaskList] = useState([]);
@@ -14,7 +15,12 @@ function TasksManagerList({ ApplyChanged }) {
           return response.json();
         })
         .then((result) => setTaskList(result))
-        .catch((error) => alert("Fetch error: " + error.message));
+        .catch((error) => {
+            /*toast.error("Fetch error: " + error.message, {
+                position : 'bottom-right'
+             });*/
+             
+        });
     }, []);
     
   return (

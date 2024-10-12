@@ -26,7 +26,9 @@ function Tasks() {
           setInfos(result)
           console.log(result);
         })
-        .catch((error) => alert("Fetch error: " + error.message));
+        .catch((error) => {
+          //alert("Fetch error: " + error.message)
+        });
     }, []);
 
   return (
