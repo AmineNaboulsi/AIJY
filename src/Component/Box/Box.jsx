@@ -101,7 +101,7 @@ function Box() {
           {datalist.map((row) => (
             <TableRow
               key={row._id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 , height : "20px"} }}
             >
               <TableCell component="th" scope="row">
                 {row.productName}
